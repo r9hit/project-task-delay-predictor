@@ -20,12 +20,6 @@ To run this project, you need to have the following Python libraries installed:
 - **OpenPyXL**: For reading Excel files
 - **Joblib**: For saving the trained model
 
-To install the dependencies, run the following command:
-
-```bash
-pip install pandas numpy scikit-learn matplotlib seaborn openpyxl joblib
-
-# Project Overview
 
 ## Dataset
 
