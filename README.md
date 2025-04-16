@@ -66,6 +66,41 @@ The classification report and confusion matrix provide detailed insights into ho
 
 While the single-target model is great for initial analysis, the multi-output model demonstrates scalability. Real-world projects often require predicting multiple outcomes (e.g., time delays, budget overruns), and this approach helps address such complexities.
 
+## Feature Importance Insights from Model Y1
+
+The plot below highlights which features contribute most to predicting delays:
+
+| **Rank** | **Feature** | **Relative Importance** |
+|----------|-------------|--------------------------|
+| 1        | X8.1        | ~7.7%                   |
+| 2        | X7.1        | ~6.1%                   |
+| 3        | X10.3       | ~4.1%                   |
+| 4        | X10.6       | ~3.9%                   |
+| ...      | ...         | ...                     |
+
+**X8.1**, **X7.1**, and **X10.3** are the most influential features for predicting **Y1**.  
+These may correspond to dimensions like task urgency, resource availability, or team coordination (as defined in the data dictionary).
+
+
+## Most Influential Features in Predicting Task Delay (Y1-Y4)
+
+The following table lists the most influential features in predicting task delays across multiple targets (Y1-Y4):
+
+| **Rank** | **Feature** | **Relative Insight** |
+|----------|-------------|----------------------|
+| 1        | X1.4        | This feature contributes the most. You might explore what X1.4 represents in your dataset — possibly a key performance metric or resource allocation factor. |
+| 2        | X8.1        | Strong influence — might relate to team performance, task complexity, or cost estimation. |
+| 3        | X8.3        | Closely follows X8.1 — could be correlated with X8.1 or represent another aspect of the same process. |
+| 4–10     | X7.1, X7.7, X10.2, etc. | These are still significant but with slightly lower impact. May represent timelines, dependencies, or risks. |
+
+You can observe a gradual drop in feature importance, indicating that some features contribute very little information to the model. These features could potentially be dropped or de-emphasized in simpler models.
+
+### 🧠 Model Interpretation
+
+- **X1.4**, **X8.1**, and **X8.3** are consistently important across all output targets (Y1-Y4). This suggests that these features are strong, general predictors of task delays across multiple dimensions.
+- **Low-importance features** like X3.1, X1.7, and X4.1 might not add much to the predictions and could be candidates for **feature reduction** or **further analysis**.
+
+
 ## Why Random Forest?
 
 1. **Handles Non-linear Relationships**: Random Forest is well-suited for capturing complex, non-linear relationships between the features and the target variables.
